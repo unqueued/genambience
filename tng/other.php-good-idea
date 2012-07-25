@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>noisemaker!</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="maximum-scale=1, minimum-scale=1, width=device-width, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+	<script>
+				
+		function playaudio() {
+			//document.getElementById('tng_bridge_1.mp3').play();
+			document.getElementById('tng_bridge_1.mp3').addEventListener('ended', function(){
+			this.currentTime = 0;
+			this.pause();
+			document.getElementById('tng_bridge_1.mp3').play();
+			}, false);
+			document.getElementById('tng_bridge_1.mp3').play();
+		}
+
+		function stopaudio() {
+			document.getElementById('tng_bridge_1.mp3').pause();
+			document.getElementById('tng_bridge_1.mp3').currentTime = 0;
+		}
+	</script>
+    </head>
+    <body>
+        <audio id="tng_bridge_1.mp3" src="test.mp3" preload></audio>
+	
+	<input id="play" type="button" value="Play" onclick='playaudio()' />
+	<input id="play" type="button" value="Stop" onclick='stopaudio()' />
+    </body>
+</html>
+
